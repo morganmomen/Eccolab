@@ -6,7 +6,7 @@
 -- Généré le : sam. 14 oct. 2023 à 21:09
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
-
+use `ecollab`;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";

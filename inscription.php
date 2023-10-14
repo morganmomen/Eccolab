@@ -36,8 +36,8 @@ include "config/commandes.php";
             <label for="nom">Nom</label>
         </div>
         <div class="user-box">
-            <input type="prenom" name="prenom" required="">
-            <label for="prenom">Prénom</label>
+            <input type="adresse" name="adresse" required="">
+            <label for="adresse">adresse</label>
         </div>
         <div class="user-box">
             <input type="email" name="email" required="">

@@ -47,9 +47,9 @@ function afficherUnProduit($id)
   {
     if(require("connexion.php"))
     {
-      $req = $access->prepare("INSERT INTO produits_depot (image, nom, prix, description) VALUES (?, ?, ?, ?)");
+      $req = $access->prepare("INSERT INTO produits_depot (image, nom, prix, description,id_user,economie_elect,economie_co2,economie_h2o,type_produit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-      $req->execute(array($image, $nom, $prix, $desc));
+      $req->execute(array($image, $nom, $prix, $desc, 77, 0, 0, 0, "Test"));
 
       $req->closeCursor();
     }
@@ -59,7 +59,7 @@ function afficher()
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("SELECT * FROM produits ORDER BY id DESC");
+		$req=$access->prepare("SELECT * FROM produits_depot ORDER BY id DESC");
 
         $req->execute();
 
