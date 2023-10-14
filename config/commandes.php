@@ -49,7 +49,7 @@ function modifier($image, $nom, $prix, $desc, $id)
 {
   if(require("connexion.php"))
   {
-    $req = $access->prepare("UPDATE produits SET `image` = ?, nom = ?, prix = ?, description = ? WHERE id=?");
+    $req = $access->prepare("UPDATE produits_depot SET `image` = ?, nom = ?, prix = ?, description = ? WHERE id=?");
 
     $req->execute(array($image, $nom, $prix, $desc, $id));
 
@@ -61,7 +61,7 @@ function afficherUnProduit($id)
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("SELECT * FROM produits WHERE id=?");
+		$req=$access->prepare("SELECT * FROM produits_depot WHERE id=?");
 
         $req->execute(array($id));
 
@@ -87,8 +87,9 @@ function afficherUnProduit($id)
 
 function afficher()
 {
-    require "connexion.php";
-		$req=$access->prepare("SELECT * FROM produits ORDER BY id DESC");
+	if(require("connexion.php"))
+	{
+		$req=$access->prepare("SELECT * FROM produits_depot ORDER BY id DESC");
 
         $req->execute();
 
@@ -97,13 +98,14 @@ function afficher()
         return $data;
 
         $req->closeCursor();
+	}
 }
 
 function supprimer($id)
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("DELETE FROM produits WHERE id=?");
+		$req=$access->prepare("DELETE FROM produits_depot WHERE id=?");
 
 		$req->execute(array($id));
 
@@ -115,7 +117,7 @@ function getAdmin($email, $password){
   
   if(require("connexion.php")){
 
-    $req = $access->prepare("SELECT * FROM admin WHERE id=33");
+    $req = $access->prepare("SELECT * FROM admin WHERE id=77");
 
     $req->execute();
 
