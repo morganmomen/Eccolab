@@ -72,11 +72,11 @@ if(isset($_POST['envoyer']))
         $nom = htmlspecialchars(strip_tags($_POST['nom']));
         $adresse = htmlspecialchars(strip_tags($_POST['adresse']));
 
-        $user = ajouterUser($nom, $adresse, $email, $motdepasse);
+        $user = ajouterUser($nom, $adresse, $email,hash('sha256',$motdepasse));
 
         if($user){
             // $_SESSION['userxXJppk45hPGu'] = $user;
-            header('reussi.php');
+            header('login.php');
         }else{
             echo "Compte non créer !";
         }

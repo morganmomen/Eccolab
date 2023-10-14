@@ -62,15 +62,16 @@ if(isset($_POST['envoyer']))
         $login = htmlspecialchars(strip_tags($_POST['email'])) ;
         $motdepasse = htmlspecialchars(strip_tags($_POST['motdepasse']));
 
-        $admin = getAdmin($login, $motdepasse);
+        $admin = getAdmin($login, hash('sha256',$motdepasse));
 
         if($admin){
             $_SESSION['xRttpHo0greL39'] = $admin;
             header('Location: admin/afficher.php');
         }
         else{
-            $user = getUser($login, $motdepasse);
-            var_dump($login, $motdepasse);
+            header('Location: reussi.php'); 
+            $user = getUser($login, hash('sha256',$motdepasse));
+        
             if($user){
                 $_SESSION['xRttpHo0greL39'] = $user;
                // header('Location: reussi.php');
