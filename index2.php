@@ -7,101 +7,77 @@ require("config/commandes.php");
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.80.0">
-    <title>Album example · Bootstrap v5.0</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-
-<style>
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-</style>
-
-    
+    <meta name="author" content="Morgan MOMEN, Tristan VILLETTE">
+      <link rel="stylesheet" href="style/main.css">
+      <link rel="stylesheet" href="style/contact.css">
+<title>Ecollab'</title>
   </head>
   <body>
     
 <header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">About</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+    <div id="navbar">
+        <div id="logo">
+        <a href="index.php">
+            <img id="logo_img" src="images/logo.png">
+        </a>
+
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Sign in</h4>
-          <ul class="list-unstyled">
-            <li><a href="login.php" class="text-white">Se connecter</a></li>
-          </ul>
+        <div id="Depot">
+        <a href="panier.php" width=100% heigth=100%>
+            <strong>Je dépose des produits</strong>
+        </a>
         </div>
-      </div>
+        <div id="Achat">
+        <a href="commandes.php">
+            <strong>J'achète des produits</strong>
+        </a>
+        </div>
+        <div id="Account">
+        <a href="login.php">
+            <img src="images/account.png">
+
+        </a>
+        </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>MonoShop</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
 </header>
 
 <main>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-      <?php foreach($Produits as $produit): ?> 
-        <div class="col">
-          <div class="card shadow-sm">
-            <h3><?= $produit->nom ?></h3>
-            <img src="<?= $produit->image ?>" style="width: 24%">
-
-            <div class="card-body">
-              <p class="card-text"><?= substr($produit->description, 0, 160); ?>...</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="produit.php?pdt=<?= $produit->id ?>"><button type="button" class="btn btn-sm btn-success">Voir plus</button></a>
-                </div>
-                <small class="text" style="font-weight: bold;"><?= $produit->prix ?> €</small>
-              </div>
-            </div>
-          </div>
+    <div id="main_container">
+        <div id="title">
+            <h4><strong>ECOLLAB</strong>'</h4>
         </div>
-  <?php endforeach; ?>
-
-
-      </div>
+        <div id="subtitle">
+            <h3>Réinventons l'avenir en recyclant le passé</h3>
     </div>
-  </div>
+        <a href=#explanations><div class="arrow"></div></a>
+    </div>
+<div id="contacts">
+    <div id="normal-text"><strong>Nous sommes Ecollab'. Contactez nous ! </strong></div>
+    <div id="write-effect">
+        <div class="typed-out">contact@ecollab.com</div>
+        <div class="typed-out">1 Rue de la Chebarde, Aubière</div>
+        <div class="typed-out">09 03 01 05 04</div>
+    </div>
+</div>
+    <div id="explanations">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper sed magna at venenatis. Integer rutrum vulputate interdum. Nullam lobortis eros eu mauris varius scelerisque. Ut non magna ultricies sem semper commodo. Vestibulum malesuada turpis quis mauris ornare, in porttitor neque luctus. Nulla tempor quis purus eget iaculis. Duis tristique diam tristique metus blandit, ac rhoncus nisl aliquet. Pellentesque ac risus et urna semper pulvinar. Quisque nec metus in urna congue sollicitudin. Aliquam erat volutpat. Etiam sodales vestibulum diam, vitae ornare erat rutrum quis. Nunc non velit sed nisl porta mollis eu non augue. Suspendisse ut tellus efficitur, volutpat nulla eu, hendrerit nunc. Etiam a dignissim orci. Aliquam id tellus sed nibh consectetur pretium. Donec vitae ex et purus efficitur efficitur quis vel ipsum.
 
+            Nunc sapien ligula, tempus nec condimentum ut, tincidunt sed ex. Nam in leo sit amet eros imperdiet ornare. Morbi hendrerit massa lectus, sed tincidunt ante aliquam id. Donec hendrerit odio ac tortor imperdiet, vitae pulvinar est hendrerit. Phasellus commodo tempus magna, vel euismod velit interdum ut. Phasellus eu fermentum justo, et commodo quam. Donec convallis massa eget enim imperdiet, at laoreet turpis euismod.
+
+            Praesent ut porttitor risus, at dignissim ex. Morbi non lorem aliquet, elementum risus laoreet, feugiat dui. Sed quis eros aliquam, viverra neque non, gravida felis. Pellentesque suscipit elit nec metus porta, sed mattis sapien convallis. Phasellus sollicitudin non quam et hendrerit. Nullam at lacus in dolor rutrum sollicitudin. Donec consequat ipsum enim, id viverra velit pretium at. Sed a aliquam erat. Proin id sem vulputate, facilisis tellus interdum, vestibulum sem.
+
+            Cras ipsum velit, blandit vel volutpat non, molestie nec elit. Vestibulum at metus vel nulla tincidunt consectetur vitae et justo. Mauris condimentum tortor diam, ut sodales tortor lobortis non. Quisque ac pulvinar nunc. Praesent vel molestie dolor, id aliquet nisl. Nam ut erat porta, faucibus nisl et, fermentum neque. Mauris molestie tincidunt massa. Curabitur ut maximus nisl, a cursus mauris.
+
+            Curabitur sagittis, nunc ac eleifend aliquet, neque magna lacinia augue, non vulputate urna augue et turpis. Pellentesque convallis, sem vel pharetra tristique, risus enim accumsan turpis, ut lacinia odio metus non eros. Nullam dictum erat quis sapien interdum tristique. Phasellus sapien orci, accumsan sed ornare eget, egestas quis quam. Maecenas hendrerit aliquet justo, id egestas enim porta vel. Aliquam convallis vitae lectus sed molestie. Nullam ut mollis ipsum, rutrum euismod ligula. Integer auctor scelerisque enim nec eleifend. Phasellus risus leo, viverra id varius a, porta eu lectus. Sed massa massa, lacinia ac augue ac, luctus ultricies mauris. Duis pretium ligula justo. Quisque ac tincidunt dolor. Pellentesque tortor turpis, fringilla eget viverra eget, consectetur sed nulla. Mauris ut ipsum tristique, dapibus dolor vitae, placerat ipsum.
+        </p>
+
+    </div>
 </main>
 
   </body>

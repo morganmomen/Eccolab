@@ -59,7 +59,7 @@ function afficher()
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("SELECT * FROM produits_depot ORDER BY id DESC");
+		$req=$access->prepare("SELECT * FROM produits ORDER BY id DESC");
 
         $req->execute();
 
@@ -92,7 +92,7 @@ function getAdmin($email, $password){
     $req->execute();
 
     if($req->rowCount() == 1){
-      
+
       $data = $req->fetchAll(PDO::FETCH_OBJ);
 
       foreach($data as $i){
@@ -114,14 +114,14 @@ function getAdmin($email, $password){
 
 }
 function getUser($email, $password){
-  
+
   if(require("connexion.php")){
 
     $req = $access->prepare("SELECT email,motdepasse FROM user ");
 
     $req->execute();
-    
-    
+
+
     if($req->rowCount() == 1){
       
       $data = $req->fetchAll(PDO::FETCH_OBJ);
