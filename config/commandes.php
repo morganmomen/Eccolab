@@ -1,12 +1,12 @@
 <?php
 
-function ajouterUser($nom, $prenom, $email, $motdepasse)
+function ajouterUser($nom, $adresse, $email, $motdepasse)
 {
   if(require("connexion.php"))
   {
-    $req = $access->prepare("INSERT INTO utilisateurs (nom, prenom, email, motdepasse) VALUES (?, ?, ?, ?)");
+    $req = $access->prepare("INSERT INTO user (nom, adresse , email, motdepasse) VALUES (?, ?, ?, ?)");
 
-    $req->execute(array($nom, $prenom, $email, $motdepasse));
+    $req->execute(array($nom, $adresse, $email, $motdepasse));
 
     return true;
 
@@ -14,36 +14,6 @@ function ajouterUser($nom, $prenom, $email, $motdepasse)
   }
 }
 
-// function getUsers($email, $password){
-  
-//   if(require("connexion.php")){
-
-//     $req = $access->prepare("SELECT * FROM utilisateur ");
-
-//     $req->execute();
-
-//     if($req->rowCount() == 1){
-      
-//       $data = $req->fetchAll(PDO::FETCH_OBJ);
-
-//       foreach($data as $i){
-//         $mail = $i->email;
-//         $mdp = $i->motdepasse;
-//       }
-
-//       if($mail == $email AND $mdp == $password)
-//       {
-//         return $data;
-//       }
-//       else{
-//           return false;
-//       }
-
-//     }
-
-//   }
-
-// }
 
 function modifier($image, $nom, $prix, $desc, $id)
 {
@@ -121,6 +91,37 @@ function getAdmin($email, $password){
 
     $req->execute();
 
+    if($req->rowCount() == 1){
+      
+      $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+      foreach($data as $i){
+        $mail = $i->email;
+        $mdp = $i->motdepasse;
+      }
+
+      if($mail == $email AND $mdp == $password)
+      {
+        return $data;
+      }
+      else{
+          return false;
+      }
+
+    }
+
+  }
+
+}
+function getUser($email, $password){
+  
+  if(require("connexion.php")){
+
+    $req = $access->prepare("SELECT email,motdepasse FROM user ");
+
+    $req->execute();
+    
+    
     if($req->rowCount() == 1){
       
       $data = $req->fetchAll(PDO::FETCH_OBJ);
