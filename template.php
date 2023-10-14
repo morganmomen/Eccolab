@@ -15,13 +15,12 @@
     <div id="navbar">
         <div id="logo" class="container">
         <a href="index.php" class="navbar-brand d-flex align-items-center">
-            <img id="logo_img" src="images/logo.png">
+            <strong>Ecollab'</strong>
         </a>
-
         </div>
         <div id="Depot" class="container">
         <a href="panier.php" class="navbar-brand d-flex align-items-center">
-            <strong>Déposer un produit</strong>
+            <strong>Panier</strong>
         </a>
         </div>
         <div id="Achat" class="container">
