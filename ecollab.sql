@@ -6,7 +6,7 @@
 -- Généré le : sam. 14 oct. 2023 à 14:41
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
-
+use `ecollab`;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -17,13 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Base de données : `ecollab`
---
 
--- --------------------------------------------------------
-
---
 -- Structure de la table `admin`
 --
 
