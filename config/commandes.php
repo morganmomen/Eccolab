@@ -49,7 +49,7 @@ function modifier($image, $nom, $prix, $desc, $id)
 {
   if(require("connexion.php"))
   {
-    $req = $access->prepare("UPDATE produits_depot SET `image` = ?, nom = ?, prix = ?, description = ? WHERE id=?");
+    $req = $access->prepare("UPDATE produits SET `image` = ?, nom = ?, prix = ?, description = ? WHERE id=?");
 
     $req->execute(array($image, $nom, $prix, $desc, $id));
 
@@ -61,7 +61,7 @@ function afficherUnProduit($id)
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("SELECT * FROM produits_depot WHERE id=?");
+		$req=$access->prepare("SELECT * FROM produits WHERE id=?");
 
         $req->execute(array($id));
 
@@ -89,7 +89,7 @@ function afficher()
 {
 	if(require("connexion.php"))
 	{
-		$req=$access->prepare("SELECT * FROM produits_depot ORDER BY id DESC");
+        $req=$access->prepare("SELECT * FROM produits_depot ORDER BY id DESC");
 
         $req->execute();
 

@@ -1,3 +1,10 @@
+<?php
+
+require("config/commandes.php");
+
+  $Produits=afficher();
+
+?>
 
 <!doctype html>
 <html lang="fr">
