@@ -36,8 +36,8 @@ if(isset($_SESSION['xRttpHo0greL39']))
                         <label for="email">Username</label>
                     </div>
                     <div class="user-box">
-                        <input type="password" name="motdepasse" required="">
-                        <label for="password">Password</label>
+                        <input type="motdepasse" name="motdepasse" required="">
+                        <label for="motdepasse">Password</label>
                     </div>
                     <div id="buttons">
                     <a href="#">
