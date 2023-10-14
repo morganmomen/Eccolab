@@ -4,7 +4,7 @@ function ajouterUser($nom, $adresse, $email, $motdepasse)
 {
   if(require("connexion.php"))
   {
-    $req = $access->prepare("INSERT INTO utilisateurs (nom, adresse , email, motdepasse) VALUES (?, ?, ?, ?)");
+    $req = $access->prepare("INSERT INTO user (nom, adresse , email, motdepasse) VALUES (?, ?, ?, ?)");
 
     $req->execute(array($nom, $adresse, $email, $motdepasse));
 

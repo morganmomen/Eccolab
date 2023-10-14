@@ -76,7 +76,7 @@ if(isset($_POST['envoyer']))
 
         if($user){
             // $_SESSION['userxXJppk45hPGu'] = $user;
-            header('Location: index.php');
+            header('reussi.php');
         }else{
             echo "Compte non créer !";
         }
