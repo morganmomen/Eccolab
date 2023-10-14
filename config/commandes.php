@@ -87,8 +87,7 @@ function afficherUnProduit($id)
 
 function afficher()
 {
-	if(require("connexion.php"))
-	{
+    require "connexion.php";
 		$req=$access->prepare("SELECT * FROM produits ORDER BY id DESC");
 
         $req->execute();
@@ -98,7 +97,6 @@ function afficher()
         return $data;
 
         $req->closeCursor();
-	}
 }
 
 function supprimer($id)

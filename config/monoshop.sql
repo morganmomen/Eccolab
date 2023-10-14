@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `pseudo`, `email`, `motdepasse`) VALUES
-(33, 'Fred', 'fred@admin.com', 'monoshop#123');
+(33, 'root', 'fred@admin.com', 'root');
 
 -- --------------------------------------------------------
 
