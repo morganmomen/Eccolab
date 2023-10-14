@@ -120,6 +120,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
           try 
           {
             supprimer($idproduit);
+            header('Location: supprimer.php');
             
           } 
           catch (Exception $e) 

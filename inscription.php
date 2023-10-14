@@ -37,7 +37,7 @@ include "config/commandes.php";
         </div>
         <div class="user-box">
             <input type="adresse" name="adresse" required="">
-            <label for="adresse">adresse</label>
+            <label for="adresse">Adresse</label>
         </div>
         <div class="user-box">
             <input type="email" name="email" required="">
@@ -73,8 +73,8 @@ if(isset($_POST['envoyer']))
         $user = ajouterUser($nom, $adresse, $email,hash('sha256',$motdepasse));
 
         if($user){
-            // $_SESSION['userxXJppk45hPGu'] = $user;
-            header('login.php');
+            $_SESSION['userxXJppk45hPGu'] = $user;
+            header('Location: login.php');
         }else{
             echo "Compte non créer !";
         }
