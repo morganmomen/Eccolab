@@ -21,7 +21,7 @@ include "config/commandes.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Login - MonoShop</title>
+    <title>Login - ecollab</title>
 </head>
 <body>
 <br>
@@ -39,8 +39,8 @@ include "config/commandes.php";
                 <input type="name" name="nom" class="form-control" style="width: 350%;" >
             </div>
             <div class="mb-3">
-                <label for="prenom" class="form-label">Prenom</label>
-                <input type="name" name="prenom" class="form-control" style="width: 350%;" >
+                <label for="adresse" class="form-label">adresse</label>
+                <input type="adresse" name="adresse" class="form-control" style="width: 350%;" >
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -65,14 +65,14 @@ include "config/commandes.php";
 
 if(isset($_POST['envoyer']))
 {
-    if(!empty($_POST['email']) AND !empty($_POST['motdepasse']) AND !empty($_POST['nom']) AND !empty($_POST['prenom']))
+    if(!empty($_POST['email']) AND !empty($_POST['motdepasse']) AND !empty($_POST['nom']) AND !empty($_POST['adresse']))
     {
         $email = htmlspecialchars(strip_tags($_POST['email'])) ;
         $motdepasse = htmlspecialchars(strip_tags($_POST['motdepasse']));
         $nom = htmlspecialchars(strip_tags($_POST['nom']));
-        $prenom = htmlspecialchars(strip_tags($_POST['prenom']));
+        $adresse = htmlspecialchars(strip_tags($_POST['adresse']));
 
-        $user = ajouterUser($nom, $prenom, $email, $motdepasse);
+        $user = ajouterUser($nom, $adresse, $email, $motdepasse);
 
         if($user){
             // $_SESSION['userxXJppk45hPGu'] = $user;

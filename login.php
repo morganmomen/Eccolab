@@ -67,8 +67,18 @@ if(isset($_POST['envoyer']))
         if($admin){
             $_SESSION['xRttpHo0greL39'] = $admin;
             header('Location: admin/afficher.php');
-        }else{
-            header('Location: index.php');
+        }
+        else{
+            $user = getUser($login, $motdepasse);
+            var_dump($login, $motdepasse);
+            if($user){
+                $_SESSION['xRttpHo0greL39'] = $user;
+               // header('Location: reussi.php');
+               header('Location: client/afficher.php');
+            }
+            else{
+            header('Location: erreur.php');
+            }
         }
     }
 
