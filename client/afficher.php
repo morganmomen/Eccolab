@@ -35,7 +35,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <div class="container-fluid">
-<a class="navbar-brand" href="../">ecollab</a>
+<a class="navbar-brand" href="../">Ecollab'</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -45,12 +45,8 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
         <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="../admin/afficher.php">Produits</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="../admin/">Nouveau</a>
+        <a class="nav-link" aria-current="page" href="../admin/">Déposer un produit</a>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" href="supprimer.php">Suppression</a>
-        </li>
-        
     </ul>
     <div style="margin-right: 500px">
 
@@ -68,7 +64,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">image</th>
+                <th scope="col">Image</th>
                 <th scope="col">nom</th>
                 <th scope="col">prix</th>
                 <th scope="col">Description</th>
