@@ -85,64 +85,65 @@ function supprimer($id)
 
 function getAdmin($email, $password){
   
-  if(require("connexion.php")){
+  if(require("connexion.php")) {
 
-    $req = $access->prepare("SELECT * FROM admin WHERE id=77");
+      $req = $access->prepare("SELECT * FROM admin WHERE id=77");
 
-    $req->execute();
+      $req->execute();
 
-    if($req->rowCount() == 1){
+      if ($req->rowCount() == 1) {
 
-      $data = $req->fetchAll(PDO::FETCH_OBJ);
+          $data = $req->fetchAll(PDO::FETCH_OBJ);
 
-      foreach($data as $i){
-        $mail = $i->email;
-        $mdp = $i->motdepasse;
+          foreach ($data as $i) {
+              $mail = $i->email;
+              $mdp = $i->motdepasse;
+
+
+              if ($mail == $email and $mdp == $password) {
+                  return $data;
+              } else {
+                  return false;
+              }
+
+          }
+
       }
-
-      if($mail == $email AND $mdp == $password)
-      {
-        return $data;
-      }
-      else{
-          return false;
-      }
-
-    }
-
   }
-
 }
 function getUser($email, $password){
 
-  if(require("connexion.php")){
+  if(require("connexion.php")) {
 
-    $req = $access->prepare("SELECT email,motdepasse FROM user ");
+            $req = $access->prepare("SELECT email,motdepasse FROM user ");
 
-    $req->execute();
+            $req->execute();
 
 
-    if($req->rowCount() == 1){
-      
-      $data = $req->fetchAll(PDO::FETCH_OBJ);
+            if ($req->rowCount() == 1) {
 
-      foreach($data as $i){
-        $mail = $i->email;
-        $mdp = $i->motdepasse;
+                $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+                foreach ($data as $i) {
+                    $mail = $i->email;
+                    $mdp = $i->motdepasse;
+
+                      echo $mail;
+                      echo $email;
+                      echo $mdp;
+                      echo $password;
+                    if ($mail == $email and $mdp == $password) {
+
+                        return $data;
+                    } else {
+                        return false;
+                    }
+
+                }
+
+            }
+        }
       }
 
-      if($mail == $email AND $mdp == $password)
-      {
-        return $data;
-      }
-      else{
-          return false;
-      }
+      ?>
 
-    }
-
-  }
-
-}
-
-?>
