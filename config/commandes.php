@@ -83,87 +83,84 @@ function supprimer($id)
 	}
 }
 
-function getAdmin($email, $password){
-  
-  if(require("connexion.php")) {
+function getAdmin($email, $password)
+{
 
-      $req = $access->prepare("SELECT * FROM admin WHERE id=77");
+    if (require("connexion.php")) {
 
-      $req->execute();
+        $req = $access->prepare("SELECT * FROM admin WHERE id=77");
 
-<<<<<<< HEAD
-      if ($req->rowCount() == 1) {
+        $req->execute();
 
-          $data = $req->fetchAll(PDO::FETCH_OBJ);
+        if ($req->rowCount() == 1) {
 
-          foreach ($data as $i) {
-              $mail = $i->email;
-              $mdp = $i->motdepasse;
+            $data = $req->fetchAll(PDO::FETCH_OBJ);
 
-
-              if ($mail == $email and $mdp == $password) {
-                  return $data;
-              } else {
-                  return false;
-              }
-
-          }
-=======
-    if($req->rowCount() == 1){
-
-      $data = $req->fetchAll(PDO::FETCH_OBJ);
->>>>>>> holla
-
-      }
-  }
-}
-function getUser($email, $password){
-<<<<<<< HEAD
-=======
-
-  if(require("connexion.php")){
->>>>>>> holla
-
-  if(require("connexion.php")) {
-
-<<<<<<< HEAD
-            $req = $access->prepare("SELECT email,motdepasse FROM user ");
-=======
-    $req->execute();
+            foreach ($data as $i) {
+                $mail = $i->email;
+                $mdp = $i->motdepasse;
 
 
-    if($req->rowCount() == 1){
-      
-      $data = $req->fetchAll(PDO::FETCH_OBJ);
->>>>>>> holla
-
-            $req->execute();
-
-
-            if ($req->rowCount() == 1) {
-
-                $data = $req->fetchAll(PDO::FETCH_OBJ);
-
-                foreach ($data as $i) {
-                    $mail = $i->email;
-                    $mdp = $i->motdepasse;
-
-                      echo $mail;
-                      echo $email;
-                      echo $mdp;
-                      echo $password;
-                    if ($mail == $email and $mdp == $password) {
-
-                        return $data;
-                    } else {
-                        return false;
-                    }
-
+                if ($mail == $email and $mdp == $password) {
+                    return $data;
+                } else {
+                    return false;
                 }
 
             }
+
         }
-      }
+    }
+}
+    function getUser($email, $password)
+    {
+
+
+        if (require("connexion.php")) {
+
+
+            if (require("connexion.php")) {
+
+
+                $req = $access->prepare("SELECT email,motdepasse FROM user ");
+
+                $req->execute();
+
+
+                if ($req->rowCount() == 1) {
+
+                    $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+
+                    $req->execute();
+
+
+                    if ($req->rowCount() == 1) {
+
+                        $data = $req->fetchAll(PDO::FETCH_OBJ);
+
+                        foreach ($data as $i) {
+                            $mail = $i->email;
+                            $mdp = $i->motdepasse;
+
+                            echo $mail;
+                            echo $email;
+                            echo $mdp;
+                            echo $password;
+                            if ($mail == $email and $mdp == $password) {
+
+                                return $data;
+                            } else {
+                                return false;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 
       ?>
 
