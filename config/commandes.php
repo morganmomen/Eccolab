@@ -47,9 +47,9 @@ function afficherUnProduit($id)
   {
     if(require("connexion.php"))
     {
-      $req = $access->prepare("INSERT INTO produits_depot (image, nom, prix, description) VALUES (?, ?, ?, ?)");
+      $req = $access->prepare("INSERT INTO produits_depot (image, nom, prix, description,id_user,economie_elect,economie_co2,economie_h2o,type_produit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-      $req->execute(array($image, $nom, $prix, $desc));
+      $req->execute(array($image, $nom, $prix, $desc, 77, 0, 0, 0, "Test"));
 
       $req->closeCursor();
     }
@@ -92,7 +92,7 @@ function getAdmin($email, $password){
     $req->execute();
 
     if($req->rowCount() == 1){
-      
+
       $data = $req->fetchAll(PDO::FETCH_OBJ);
 
       foreach($data as $i){
@@ -114,14 +114,14 @@ function getAdmin($email, $password){
 
 }
 function getUser($email, $password){
-  
+
   if(require("connexion.php")){
 
     $req = $access->prepare("SELECT email,motdepasse FROM user ");
 
     $req->execute();
-    
-    
+
+
     if($req->rowCount() == 1){
       
       $data = $req->fetchAll(PDO::FETCH_OBJ);
