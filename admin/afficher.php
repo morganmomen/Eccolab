@@ -47,6 +47,7 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
         <li class="nav-item">
         <a class="nav-link" aria-current="page" href="../admin/">Nouveau</a>
         </li>
+
         <li class="nav-item">
         <a class="nav-link" href="supprimer.php">Suppression</a>
         </li>
@@ -72,6 +73,9 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <th scope="col">nom</th>
                 <th scope="col">prix</th>
                 <th scope="col">Description</th>
+                <th scope="col">economie_elect</th>
+                <th scope="col">economie_co2</th>
+                <th scope="col">economie_h2o</th>
                 <th scope="col">Editer</th>
                 </tr>
             </thead>
@@ -85,6 +89,10 @@ foreach($_SESSION['xRttpHo0greL39'] as $i){
                 <td><?= $produit->nom ?></td>
                 <td style="font-weight: bold; color: green;"><?= $produit->prix ?>€</td>
                 <td><?= substr($produit->description, 0, 100); ?>...</td>
+                <td><?= $produit->economie_elect ?></td>
+                <td><?= $produit->economie_co2 ?></td>
+                <td><?= $produit->economie_h2o ?></td>
+
                 <td><a href="editer.php?id=<?= $produit->id ?>"><i class="fa fa-pencil" style="font-size: 30px;"></i></a></td>
                 </tr>      
 <?php endforeach; ?>
