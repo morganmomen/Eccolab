@@ -11,7 +11,7 @@
 {
     width: 10%;
     height: 100%;
-    background-color: red;
+    background-color: #18a4e3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: blue;
+    background: #18a4e3;
     color: white;
     font-family: "Abyssinica SIL";
 }
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: blue;
+    background: #18a4e3;
 }
 #Achat strong
 {
@@ -52,7 +52,7 @@
 {
     width: 10%;
     height: 100%;
-    background-color: blue;
+    background-color:#18a4e3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,6 +71,7 @@
 }
 #main_container
 {
+    margin: 0px;
     top: 15vh;
     width: 100%;
     height: 90vh;
@@ -80,8 +81,9 @@
 
 #explanations
 {
+    margin: 0px;
     height: 85vh;
-    background: antiquewhite;
+    background: #18a4e3;
 }
 #logo_img
 {
@@ -166,10 +168,15 @@ div.arrow {
 
 }
 #explanations p{
-    top: 50%;
     font-family: "Abyssinica SIL";
-    font-size: 15px;
+    font-size: 30px;
+    margin: 0;
+    color: white;
+}
+#explanations strong{
     text-align: center;
+    font-family: "Abyssinica SIL";
+    font-size: 45px;
     margin: 0;
     color: white;
 }
