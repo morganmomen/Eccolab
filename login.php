@@ -37,7 +37,11 @@ if(isset($_SESSION['xRttpHo0greL39']))
                     </div>
                     <div class="user-box">
                         <input type="password" name="motdepasse" required="">
+<<<<<<< HEAD
                         <label for="motdepasse">Password</label>
+=======
+                        <label for="password">Password</label>
+>>>>>>> holla
                     </div>
                     <div id="buttons">
                     <a href="#">

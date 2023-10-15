@@ -91,6 +91,7 @@ function getAdmin($email, $password){
 
       $req->execute();
 
+<<<<<<< HEAD
       if ($req->rowCount() == 1) {
 
           $data = $req->fetchAll(PDO::FETCH_OBJ);
@@ -107,15 +108,34 @@ function getAdmin($email, $password){
               }
 
           }
+=======
+    if($req->rowCount() == 1){
+
+      $data = $req->fetchAll(PDO::FETCH_OBJ);
+>>>>>>> holla
 
       }
   }
 }
 function getUser($email, $password){
+<<<<<<< HEAD
+=======
+
+  if(require("connexion.php")){
+>>>>>>> holla
 
   if(require("connexion.php")) {
 
+<<<<<<< HEAD
             $req = $access->prepare("SELECT email,motdepasse FROM user ");
+=======
+    $req->execute();
+
+
+    if($req->rowCount() == 1){
+      
+      $data = $req->fetchAll(PDO::FETCH_OBJ);
+>>>>>>> holla
 
             $req->execute();
 
